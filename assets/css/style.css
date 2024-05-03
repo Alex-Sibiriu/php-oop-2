@@ -1,0 +1,10 @@
+body {
+  background-image: url('../img/pets-bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h2,
+h3 {
+  background: linear-gradient(to right,transparent, white, transparent);
+}
