@@ -1,6 +1,9 @@
 <?php
 
+require_once __DIR__ . '/Color.php';
+
 class Toy extends Product {
+  use Color;
 
   public $material;
   public $recommended_breed;

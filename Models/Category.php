@@ -12,9 +12,11 @@
     $this->icon = $_icon;
   }
 
-  public function addProduct($array, $item) {
-    if (!isset($this->products[$array]) || !in_array($item, $this->products[$array]) ) {
-      $this->products[$array][] = $item;
+  public function addProduct($item) {
+    if (empty($this->products) || !in_array($item, $this->products) ) {
+      $this->products[] = $item;
+    } else {
+      throw new Exception("Questo prodotto è già in catalogo");
     }
   }
  }

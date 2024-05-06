@@ -35,7 +35,7 @@
     <h3 class="fw-bold fs-2 py-2">Pet Food</h3>
     <div class="row row-cols-3">
 
-      <?php foreach ($dog_category->products['food'] as $food): ?>
+      <?php foreach ($dog_foods as $food): ?>
       <div class="col mb-2">
         <div class="card bg-light-subtle text-secondary p-2 h-100 d-flex flex-column justify-content-between align-items-center">
           <img class="w-100 mb-3 mt-auto" src="<?php echo $food->img ?>" alt="<?php echo $food->name ?>">
@@ -50,7 +50,7 @@
       </div>
       <?php endforeach ?>
 
-      <?php foreach ($cat_category->products['food'] as $food): ?>
+      <?php foreach ($cat_foods as $food): ?>
       <div class="col mb-2">
         <div class="card bg-light-subtle text-secondary p-2 h-100 d-flex flex-column justify-content-between align-items-center">
           <img class="w-100 mb-3 mt-auto" src="<?php echo $food->img ?>" alt="<?php echo $food->name ?>">
@@ -71,7 +71,7 @@
     <h3 class="fw-bold fs-2 text-secondary py-2">Le Nostre Cucce</h3>
     <div class="row row-cols-3">
 
-      <?php foreach ($dog_category->products['kennels'] as $kennel): ?>
+      <?php foreach ($dog_kennels as $kennel): ?>
         <div class="col mb-2">
           <div class="card bg-light-subtle text-secondary p-2 h-100 d-flex flex-column justify-content-between align-items-center">
             <img class="w-100 mb-3 mt-auto" src="<?php echo $kennel->img ?>" alt="<?php echo $kennel->name ?>">
@@ -86,7 +86,7 @@
         </div>
       <?php endforeach ?>
 
-      <?php foreach ($cat_category->products['kennels'] as $kennel): ?>
+      <?php foreach ($cat_kennels as $kennel): ?>
         <div class="col mb-2">
           <div class="card bg-light-subtle text-secondary p-2 h-100 d-flex flex-column justify-content-between align-items-center">
             <img class="w-100 mb-3 mt-auto" src="<?php echo $kennel->img ?>" alt="<?php echo $kennel->name ?>">
@@ -107,7 +107,7 @@
     <h3 class="fw-bold fs-2 text-secondary py-2">I Nostri Giochi</h3>
     <div class="row row-cols-3">
 
-      <?php foreach ($dog_category->products['toys'] as $toy): ?>
+      <?php foreach ($dog_toys as $toy): ?>
         <div class="col mb-2">
           <div class="card bg-light-subtle text-secondary p-2 h-100 d-flex flex-column justify-content-between align-items-center">
             <img class="w-100 mb-3 mt-auto" src="<?php echo $toy->img ?>" alt="<?php echo $toy->name ?>">
@@ -116,13 +116,18 @@
             <p><strong>Materiale: </strong><?php echo $toy->material ?></p>
             <p><strong>Adatto a: </strong><?php echo $toy->recommended_breed ?></p>
             <p><strong>Tipologia: </strong><?php echo $toy->toy_type ?></p>
+
+            <?php if ($toy->color): ?>
+              <p><strong>Colore: </strong><?php echo $toy->color ?></p>
+            <?php endif ?>
+            
             <p><strong>Prezzo: </strong>&euro;<?php echo $toy->price ?></p>
             <p class="align-self-end m-0 pe-1 text-danger"><i class="fa-solid <?php echo $dog_category->icon ?>"></i></p>
           </div>
         </div>
       <?php endforeach ?>
 
-      <?php foreach ($cat_category->products['toys'] as $toy): ?>
+      <?php foreach ($cat_toys as $toy): ?>
         <div class="col mb-2">
           <div class="card bg-light-subtle text-secondary p-2 h-100 d-flex flex-column justify-content-between align-items-center">
             <img class="w-100 mb-3 mt-auto" src="<?php echo $toy->img ?>" alt="<?php echo $toy->name ?>">
